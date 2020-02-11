@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>261207-lab2</title>
+    <title>261207-lab3</title>
     
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -37,7 +37,10 @@
 
    <!-- Google Font -->
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
+    
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -162,53 +165,79 @@
           <h1>
             Contact
           </h1>
-        </section>
-    
-        <!-- Main content -->
-        <section class="content">
-          <!-- Default box --> 
-        <div class="row">
-              <div class="col-md-6">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                      <h3 class="box-title">For contact file</h3>
+          <br>        
+          <div class="container-fluid">
+            <div class="row" >
+                <div class="col-md-12">
+                    <div class="card border-info mb-3">
+                        <div class="card-header">
+                            <h3 class="card-title">Form</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="" name="myForm">
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input type="text" name="Name" id="name" class="form-control" placeholder="Name...">
+                                </div>
+                                <div class="form-group">
+                                  <label for="">Sur-Name</label>
+                                  <input type="text" name="sName" id="sname" class="form-control" placeholder="Surname...">
+                              </div>
+                                <div class="form-group">
+                                  <label for="">Gender</label><br>
+                                  <input type="radio" name="gender" value="1" checked> Male
+                                  <input type="radio" name="gender" value="2" > Female 
+                                  <input type="radio" name="gender" value="3" > Other
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                  <input type="email" name="Email" id="email" class="form-control" placeholder="email@address.xxx">  
+                                </div>
+                                <div class="form-group">
+                                  <label for="">Description</label>
+                                <textarea class="form-control" id="text" rows="3" placeholder="Type here..."></textarea> 
+                              </div>
+                            </form>
+                            <button class="btn btn-primary btn-flat" id="su">Submit</button>
+                            <button class="btn btn-primary btn-flat pull-right" id="re">Reset</button>
+                        </div>
                     </div>
-                    <!-- /.box-header -->
-                    <!-- form start -->
-                    <form role="form">
-                      <div class="box-body">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Request</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="request">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputFile">File input</label>
-                          <input type="file" id="exampleInputFile">
-        
-                          <p class="help-block">The file should be less than 5 mb</p>
-                        </div>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox"> Correct Data?
-                          </label>
-                        </div>
-                      </div>
-                      <!-- /.box-body -->
-        
-                      <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </div>
-                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="card text-white bg-dark mb-3">
+                <div class="card-header">
+                    <h3 class="card-title">Contact List</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table text-white">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">                  
+                  <div id="chartContainer" style="height: 300px; width: 100%;">
+                  </div>
                 </div>
               </div>
-        </div>
-
+            </div> 
+          </div>   
         </section>
+        <br>
+        <!-- Main content -->
+
         <!-- /.content -->
+      <!--subcontent-->
+
       </div>
       <!-- /.content-wrapper -->
     
@@ -433,16 +462,31 @@ integrity="sha256-qE/6vdSYzQu9lgosKxhFplETvWvqAAlmAuR+yPh/0SI=" crossorigin="ano
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js" 
 integrity="sha256-GqCMs8eqcNJo0k1Zw3TBSve9COCvjIX45PYKJlH0urU=" crossorigin="anonymous"></script>
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+
 <!-- AdminLTE App -->
 <script src="js/adminlte.min.js"></script>
 
-<script src="js/game.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+
+<!-- <script src="js/game.js"></script> -->
+
+
+<script src="js/contact.js"></script>
+<!-- 
 <script>
     $(document).ready(function () {
       $('.sidebar-menu').tree()
     })
-  </script>
+  </script> -->
 
     
 </body>
